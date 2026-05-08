@@ -1,0 +1,49 @@
+
+@import url('./reset.css');
+
+@import url('./container.css');
+
+.form {
+    display: flex;
+align-items: flex-start;
+justify-content: flex-start;
+flex-direction: row;
+gap: 8px;
+width: 371px;
+height: 40px;
+}
+
+.input {
+    border: 1px solid #808080;
+border-radius: 4px;
+width: 272px;
+height: 40px;
+
+width: 272px;
+
+background: #fff;
+}
+
+.btn {
+    display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+gap: 10px;
+border-radius: 8px;
+padding: 8px 16px;
+width: 91px;
+height: 40px;
+   background: #4e75ff;
+   font: 500 16px / 1.5 "Montserrat", sans-serif;
+letter-spacing: 0.04em;
+color: #fff;
+}
+
+.loader {
+  display: none;
+}
+
+.loader.active {
+  display: block;
+}
