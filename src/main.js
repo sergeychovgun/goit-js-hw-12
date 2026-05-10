@@ -64,6 +64,8 @@ async function onSearch(e) {
 
 async function onLoadMore() {
   page += 1;
+
+  hideLoadMoreButton();
   showLoader();
 
   try {
@@ -74,15 +76,15 @@ async function onLoadMore() {
     const totalLoaded = page * PER_PAGE;
 
     if (totalLoaded >= totalHits) {
-      hideLoadMoreButton();
-
       iziToast.info({
         message: "We're sorry, but you've reached the end of search results.",
       });
+    } else {
+      showLoadMoreButton();
     }
 
-    // ✅ SCROLL
     const card = document.querySelector(".gallery-item");
+
     const height = card.getBoundingClientRect().height;
 
     window.scrollBy({
@@ -92,7 +94,7 @@ async function onLoadMore() {
 
   } catch (error) {
     iziToast.error({
-      message: "Load more failed!",
+      message: "Something went wrong!",
     });
   } finally {
     hideLoader();
