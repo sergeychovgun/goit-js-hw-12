@@ -41,7 +41,8 @@ async function onSearch(e) {
 
     if (data.hits.length === 0) {
       iziToast.error({
-        message: "Sorry, there are no images matching your search query. Please try again!",
+        message:
+          "Sorry, there are no images matching your search query. Please try again!",
       });
       return;
     }
@@ -50,6 +51,11 @@ async function onSearch(e) {
 
     if (totalHits > PER_PAGE) {
       showLoadMoreButton();
+    } else {
+      iziToast.info({
+        message:
+          "We're sorry, but you've reached the end of search results.",
+      });
     }
 
   } catch (error) {
